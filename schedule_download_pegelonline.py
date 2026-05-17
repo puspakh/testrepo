@@ -42,7 +42,7 @@ def job():
     riverclean.to_csv(r'D:\repos\wasserweise\Exercise\River_PegelOnline\riverpirna.csv', index=False) # save the clean data to replace the existing csv
     avghour = riverclean.resample('1H', on='timestamp').mean() #resample the data into average hour data
 
-    # converting data into hourly sample data to be the same scale as well data 
+    # converting data into hourly sample data to be the same scale as groundater well data 
     avghour.to_csv(r'D:\repos\wasserweise\Exercise\River_PegelOnline\riverpirna_avghour.csv')
 
 schedule.every().day.at("19:45", "Europe/Berlin").do(job)
